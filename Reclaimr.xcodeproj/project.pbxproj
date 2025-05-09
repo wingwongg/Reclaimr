@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B5B4E1332DCE441E007AF7EF /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B4E1322DCE441E007AF7EF /* DeviceActivity.framework */; };
+		B5B4E13B2DCE441E007AF7EF /* ReclaimrMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5B4E1302DCE441E007AF7EF /* ReclaimrMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5B4E1512DCE4460007AF7EF /* ReclaimrReportExtension.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = B5B4E1452DCE4460007AF7EF /* ReclaimrReportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B5B4E0A32DCE4146007AF7EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,20 +27,103 @@
 			remoteGlobalIDString = B5B4E0942DCE4144007AF7EF;
 			remoteInfo = Reclaimr;
 		};
+		B5B4E1392DCE441E007AF7EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5B4E08D2DCE4144007AF7EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5B4E12F2DCE441E007AF7EF;
+			remoteInfo = ReclaimrMonitorExtension;
+		};
+		B5B4E14F2DCE4460007AF7EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5B4E08D2DCE4144007AF7EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5B4E1442DCE4460007AF7EF;
+			remoteInfo = ReclaimrReportExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5B4E1402DCE441E007AF7EF /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B5B4E13B2DCE441E007AF7EF /* ReclaimrMonitorExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5B4E1562DCE4460007AF7EF /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				B5B4E1512DCE4460007AF7EF /* ReclaimrReportExtension.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B5B4E0952DCE4144007AF7EF /* Reclaimr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reclaimr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B4E0A22DCE4146007AF7EF /* ReclaimrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReclaimrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B4E0AC2DCE4146007AF7EF /* ReclaimrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReclaimrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B4E1302DCE441E007AF7EF /* ReclaimrMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ReclaimrMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B4E1322DCE441E007AF7EF /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		B5B4E1452DCE4460007AF7EF /* ReclaimrReportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ReclaimrReportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B4E15F2DCE4570007AF7EF /* Reclaimr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Reclaimr.entitlements; path = Reclaimr/Reclaimr.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		B5B4E0972DCE4144007AF7EF /* Reclaimr */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Reclaimr;
-			sourceTree = "<group>";
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B5B4E13C2DCE441E007AF7EF /* Exceptions for "ReclaimrMonitorExtension" folder in "ReclaimrMonitorExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B5B4E12F2DCE441E007AF7EF /* ReclaimrMonitorExtension */;
 		};
+		B5B4E1522DCE4460007AF7EF /* Exceptions for "ReclaimrReportExtension" folder in "ReclaimrReportExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B5B4E1442DCE4460007AF7EF /* ReclaimrReportExtension */;
+		};
+		B5B4E1592DCE44B9007AF7EF /* Exceptions for "Common" folder in "ReclaimrMonitorExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CircularProgressRingView.swift,
+			);
+			target = B5B4E12F2DCE441E007AF7EF /* ReclaimrMonitorExtension */;
+		};
+		B5B4E15A2DCE44B9007AF7EF /* Exceptions for "Common" folder in "ReclaimrReportExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CircularProgressRingView.swift,
+			);
+			target = B5B4E1442DCE4460007AF7EF /* ReclaimrReportExtension */;
+		};
+		B5B4E15D2DCE44BF007AF7EF /* Exceptions for "Models" folder in "ReclaimrMonitorExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DataModel.swift,
+			);
+			target = B5B4E12F2DCE441E007AF7EF /* ReclaimrMonitorExtension */;
+		};
+		B5B4E15E2DCE44BF007AF7EF /* Exceptions for "Models" folder in "ReclaimrReportExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DataModel.swift,
+			);
+			target = B5B4E1442DCE4460007AF7EF /* ReclaimrReportExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
 		B5B4E0A52DCE4146007AF7EF /* ReclaimrTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ReclaimrTests;
@@ -43,6 +132,50 @@
 		B5B4E0AF2DCE4146007AF7EF /* ReclaimrUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ReclaimrUITests;
+			sourceTree = "<group>";
+		};
+		B5B4E0FB2DCE416B007AF7EF /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B5B4E15D2DCE44BF007AF7EF /* Exceptions for "Models" folder in "ReclaimrMonitorExtension" target */,
+				B5B4E15E2DCE44BF007AF7EF /* Exceptions for "Models" folder in "ReclaimrReportExtension" target */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B5B4E0FD2DCE4177007AF7EF /* Common */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B5B4E1592DCE44B9007AF7EF /* Exceptions for "Common" folder in "ReclaimrMonitorExtension" target */,
+				B5B4E15A2DCE44B9007AF7EF /* Exceptions for "Common" folder in "ReclaimrReportExtension" target */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B5B4E1112DCE4287007AF7EF /* Assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B5B4E1132DCE42B0007AF7EF /* Application */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B5B4E1342DCE441E007AF7EF /* ReclaimrMonitorExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B5B4E13C2DCE441E007AF7EF /* Exceptions for "ReclaimrMonitorExtension" folder in "ReclaimrMonitorExtension" target */,
+			);
+			path = ReclaimrMonitorExtension;
+			sourceTree = "<group>";
+		};
+		B5B4E1462DCE4460007AF7EF /* ReclaimrReportExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B5B4E1522DCE4460007AF7EF /* Exceptions for "ReclaimrReportExtension" folder in "ReclaimrReportExtension" target */,
+			);
+			path = ReclaimrReportExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,15 +202,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5B4E12D2DCE441E007AF7EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5B4E1332DCE441E007AF7EF /* DeviceActivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5B4E1422DCE4460007AF7EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B5B4E08C2DCE4144007AF7EF = {
 			isa = PBXGroup;
 			children = (
-				B5B4E0972DCE4144007AF7EF /* Reclaimr */,
+				B5B4E15F2DCE4570007AF7EF /* Reclaimr.entitlements */,
+				B5B4E1132DCE42B0007AF7EF /* Application */,
+				B5B4E1112DCE4287007AF7EF /* Assets */,
+				B5B4E0FD2DCE4177007AF7EF /* Common */,
+				B5B4E0FB2DCE416B007AF7EF /* Models */,
 				B5B4E0A52DCE4146007AF7EF /* ReclaimrTests */,
 				B5B4E0AF2DCE4146007AF7EF /* ReclaimrUITests */,
+				B5B4E1342DCE441E007AF7EF /* ReclaimrMonitorExtension */,
+				B5B4E1462DCE4460007AF7EF /* ReclaimrReportExtension */,
+				B5B4E1312DCE441E007AF7EF /* Frameworks */,
 				B5B4E0962DCE4144007AF7EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +243,18 @@
 				B5B4E0952DCE4144007AF7EF /* Reclaimr.app */,
 				B5B4E0A22DCE4146007AF7EF /* ReclaimrTests.xctest */,
 				B5B4E0AC2DCE4146007AF7EF /* ReclaimrUITests.xctest */,
+				B5B4E1302DCE441E007AF7EF /* ReclaimrMonitorExtension.appex */,
+				B5B4E1452DCE4460007AF7EF /* ReclaimrReportExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B5B4E1312DCE441E007AF7EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5B4E1322DCE441E007AF7EF /* DeviceActivity.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,13 +267,20 @@
 				B5B4E0912DCE4144007AF7EF /* Sources */,
 				B5B4E0922DCE4144007AF7EF /* Frameworks */,
 				B5B4E0932DCE4144007AF7EF /* Resources */,
+				B5B4E1402DCE441E007AF7EF /* Embed Foundation Extensions */,
+				B5B4E1562DCE4460007AF7EF /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B5B4E13A2DCE441E007AF7EF /* PBXTargetDependency */,
+				B5B4E1502DCE4460007AF7EF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				B5B4E0972DCE4144007AF7EF /* Reclaimr */,
+				B5B4E0FB2DCE416B007AF7EF /* Models */,
+				B5B4E0FD2DCE4177007AF7EF /* Common */,
+				B5B4E1112DCE4287007AF7EF /* Assets */,
+				B5B4E1132DCE42B0007AF7EF /* Application */,
 			);
 			name = Reclaimr;
 			packageProductDependencies = (
@@ -163,6 +335,50 @@
 			productReference = B5B4E0AC2DCE4146007AF7EF /* ReclaimrUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B5B4E12F2DCE441E007AF7EF /* ReclaimrMonitorExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5B4E13D2DCE441E007AF7EF /* Build configuration list for PBXNativeTarget "ReclaimrMonitorExtension" */;
+			buildPhases = (
+				B5B4E12C2DCE441E007AF7EF /* Sources */,
+				B5B4E12D2DCE441E007AF7EF /* Frameworks */,
+				B5B4E12E2DCE441E007AF7EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B5B4E1342DCE441E007AF7EF /* ReclaimrMonitorExtension */,
+			);
+			name = ReclaimrMonitorExtension;
+			packageProductDependencies = (
+			);
+			productName = ReclaimrMonitorExtension;
+			productReference = B5B4E1302DCE441E007AF7EF /* ReclaimrMonitorExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B5B4E1442DCE4460007AF7EF /* ReclaimrReportExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5B4E1532DCE4460007AF7EF /* Build configuration list for PBXNativeTarget "ReclaimrReportExtension" */;
+			buildPhases = (
+				B5B4E1412DCE4460007AF7EF /* Sources */,
+				B5B4E1422DCE4460007AF7EF /* Frameworks */,
+				B5B4E1432DCE4460007AF7EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B5B4E1462DCE4460007AF7EF /* ReclaimrReportExtension */,
+			);
+			name = ReclaimrReportExtension;
+			packageProductDependencies = (
+			);
+			productName = ReclaimrReportExtension;
+			productReference = B5B4E1452DCE4460007AF7EF /* ReclaimrReportExtension.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +400,12 @@
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = B5B4E0942DCE4144007AF7EF;
 					};
+					B5B4E12F2DCE441E007AF7EF = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					B5B4E1442DCE4460007AF7EF = {
+						CreatedOnToolsVersion = 16.3;
+					};
 				};
 			};
 			buildConfigurationList = B5B4E0902DCE4144007AF7EF /* Build configuration list for PBXProject "Reclaimr" */;
@@ -203,6 +425,8 @@
 				B5B4E0942DCE4144007AF7EF /* Reclaimr */,
 				B5B4E0A12DCE4146007AF7EF /* ReclaimrTests */,
 				B5B4E0AB2DCE4146007AF7EF /* ReclaimrUITests */,
+				B5B4E12F2DCE441E007AF7EF /* ReclaimrMonitorExtension */,
+				B5B4E1442DCE4460007AF7EF /* ReclaimrReportExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +447,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B5B4E0AA2DCE4146007AF7EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5B4E12E2DCE441E007AF7EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5B4E1432DCE4460007AF7EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +491,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5B4E12C2DCE441E007AF7EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5B4E1412DCE4460007AF7EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +517,16 @@
 			isa = PBXTargetDependency;
 			target = B5B4E0942DCE4144007AF7EF /* Reclaimr */;
 			targetProxy = B5B4E0AD2DCE4146007AF7EF /* PBXContainerItemProxy */;
+		};
+		B5B4E13A2DCE441E007AF7EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5B4E12F2DCE441E007AF7EF /* ReclaimrMonitorExtension */;
+			targetProxy = B5B4E1392DCE441E007AF7EF /* PBXContainerItemProxy */;
+		};
+		B5B4E1502DCE4460007AF7EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5B4E1442DCE4460007AF7EF /* ReclaimrReportExtension */;
+			targetProxy = B5B4E14F2DCE4460007AF7EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -395,9 +657,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Reclaimr/Reclaimr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RV536M3UG2;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -423,9 +686,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Reclaimr/Reclaimr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RV536M3UG2;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -518,6 +782,110 @@
 			};
 			name = Release;
 		};
+		B5B4E13E2DCE441E007AF7EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ReclaimrMonitorExtension/ReclaimrMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV536M3UG2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReclaimrMonitorExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ReclaimrMonitorExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wingwongg.Reclaimr.ReclaimrMonitorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5B4E13F2DCE441E007AF7EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ReclaimrMonitorExtension/ReclaimrMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV536M3UG2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReclaimrMonitorExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ReclaimrMonitorExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wingwongg.Reclaimr.ReclaimrMonitorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B5B4E1542DCE4460007AF7EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ReclaimrReportExtension/ReclaimrReportExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV536M3UG2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReclaimrReportExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ReclaimrReportExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wingwongg.Reclaimr.ReclaimrReportExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5B4E1552DCE4460007AF7EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ReclaimrReportExtension/ReclaimrReportExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV536M3UG2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReclaimrReportExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ReclaimrReportExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wingwongg.Reclaimr.ReclaimrReportExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +921,24 @@
 			buildConfigurations = (
 				B5B4E0BD2DCE4146007AF7EF /* Debug */,
 				B5B4E0BE2DCE4146007AF7EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5B4E13D2DCE441E007AF7EF /* Build configuration list for PBXNativeTarget "ReclaimrMonitorExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5B4E13E2DCE441E007AF7EF /* Debug */,
+				B5B4E13F2DCE441E007AF7EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5B4E1532DCE4460007AF7EF /* Build configuration list for PBXNativeTarget "ReclaimrReportExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5B4E1542DCE4460007AF7EF /* Debug */,
+				B5B4E1552DCE4460007AF7EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,10 +6,12 @@
 //
 
 import DeviceActivity
+import DataDetection
 
 // Optionally override any of the functions below.
 // Make sure that your class name matches the NSExtensionPrincipalClass in your Info.plist.
 class DeviceActivityMonitorExtension: DeviceActivityMonitor {
+    
     override func intervalDidStart(for activity: DeviceActivityName) {
         super.intervalDidStart(for: activity)
         
@@ -25,7 +27,9 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     override func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
         super.eventDidReachThreshold(event, activity: activity)
         
+        print("LIMIT REACHED!!!")
         // Handle the event reaching its threshold.
+        DataModel.shared.setShieldRestrictions()
     }
     
     override func intervalWillStartWarning(for activity: DeviceActivityName) {
