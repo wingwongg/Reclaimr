@@ -11,7 +11,9 @@ struct TotalActivityView: View {
     let totalActivity: String
     
     var body: some View {
-        CircularProgressRing(progress: Double(convertToMinutes(from: totalActivity)) / 120.0, size: 150, color: .blue)
+//        CircularProgressRing(progress: Double(convertToMinutes(from: totalActivity)) / 120.0, size: 150, color: .blue)
+//            .padding(.leading, 30.0)
+        CircularProgressRing(progress: 100.0 / 120.0, size: 150, color: .blue)
             .padding(.leading, 30.0)
     }
 }

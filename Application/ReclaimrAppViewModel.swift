@@ -19,14 +19,20 @@ extension ReclaimrApp {
                 )
         }
         
+        func getSelection() {
+            print("called on startup?")
+//            let selection = DataModel.shared.loadSelection()
+        }
+        
         func startMonitoring() {
+            print("called on startup1")
             let timeLimitMinutes = DataModel.shared.dailyScreenTimeLimitHours * 60
             let selection = DataModel.shared.selectionToDiscourage
             let limitReachedEvent = DeviceActivityEvent(
                 applications: selection.applicationTokens,
                 categories: selection.categoryTokens,
                 webDomains: selection.webDomainTokens,
-                threshold: DateComponents(minute: 1))
+                threshold: DateComponents(minute: 1)) // timeLimitMinutes
             
             let center = DeviceActivityCenter()
             let activity = DeviceActivityName("MyApp.ScreenTime")

@@ -11,5 +11,5 @@ struct DailyUsageModel {
     var date: Date
     var screenTime: Int
     var productiveTime: Int
-    var tasksCompleted: [ProductiveTask]
+    var tasksCompleted: [TaskModel]
 }

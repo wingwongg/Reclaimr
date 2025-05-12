@@ -15,8 +15,8 @@ private let _DataModel = DataModel()
 
 class DataModel : ObservableObject {
     let store = ManagedSettingsStore()
-//    private let encoder = NSSecureCoding()
-//    private let decoder = NSKeyedUnarchiver()
+    
+    private let userDefaultsKey = "SelectionToDiscourage"
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
 
@@ -40,46 +40,28 @@ class DataModel : ObservableObject {
         }
     }
     
-    var selectionToDiscourage: FamilyActivitySelection {
-        set(selection) {
-//            print("saving the selections...")
-                let defaults = UserDefaults.standard
-                defaults.set(try? encoder.encode(selection), forKey: "selectionToDiscourage")
-         }
-            
-         get {
-//             print("getting selections...")
-                let defaults = UserDefaults.standard
-                guard let data = defaults.data(forKey: "selectionToDiscourage"),
-                        let decoded = try? decoder.decode(FamilyActivitySelection.self, from: data) else {
-                 return FamilyActivitySelection()
-             }
-             return decoded
-         }
-    }
+    @Published var selectionToDiscourage: FamilyActivitySelection = FamilyActivitySelection()
     
-    func setSelection(selection: FamilyActivitySelection) {
-            let defaults = UserDefaults.standard
-            defaults.set(try? encoder.encode(selection), forKey: "selectionToDiscourage")
-     }
+    func saveSelection() {
+        if let data = try? encoder.encode(selectionToDiscourage) {
+            UserDefaults.standard.set(data, forKey: userDefaultsKey)
+        }
+    }
         
-     func getSelection() -> FamilyActivitySelection {
-            let defaults = UserDefaults.standard
-            guard let data = defaults.data(forKey: "selectionToDiscourage"),
-                    let decoded = try? decoder.decode(FamilyActivitySelection.self, from: data) else {
+     func loadSelection() -> FamilyActivitySelection {
+         guard let data = UserDefaults.standard.data(forKey: userDefaultsKey),
+                    let selection = try? decoder.decode(FamilyActivitySelection.self, from: data) else {
              return FamilyActivitySelection()
          }
-         return decoded
+         return selection
      }
     
-    func updateSelection(_ selection: FamilyActivitySelection) {
-            selectionToDiscourage = selection
-            setSelection(selection: selection)
-    }
-    
     init() {
-        print("created")
-        selectionToDiscourage = FamilyActivitySelection()
+//        guard let data = UserDefaults.standard.data(forKey: userDefaultsKey),
+//                   let selection = try? decoder.decode(FamilyActivitySelection.self, from: data) else {
+//            selectionToDiscourage = FamilyActivitySelection()
+//        }
+//        selectionToDiscourage = selection
     }
     
     class var shared: DataModel {

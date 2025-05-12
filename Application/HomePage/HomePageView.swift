@@ -60,12 +60,13 @@ struct HomePageView : View {
                 NavigationLink {
                     TasksPageView()
                 } label: {
-                    Text("Do tasks")
+                    Text("Do Tasks")
                         .foregroundColor(.white)
-                        .padding(5)
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 10)
                         .background(Rectangle().foregroundColor(.green))
-                        .cornerRadius(8)
-                        .padding(.vertical, 40)
+                        .cornerRadius(15)
+                        .padding(.vertical, 30)
                 }
                 
                 // productivity log preview: list of tasks done today
