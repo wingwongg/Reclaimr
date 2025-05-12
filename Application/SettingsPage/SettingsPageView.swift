@@ -29,9 +29,6 @@ struct SettingsPageView : View {
                     Button("Restricted Apps") { isPresented = true }
                        .familyActivityPicker(isPresented: $isPresented,
                                              selection: $model.selectionToDiscourage)
-//                       .onChange(of: model.selectionToDiscourage) { newSelection in
-//                           model.setSelection(selection: newSelection)
-//                       }
                        .foregroundColor(.black)
                     
                 }

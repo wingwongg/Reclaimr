@@ -14,7 +14,7 @@ struct GoalsSettingView : View {
     var body: some View {
         VStack {
             VStack(spacing: 20) {
-                Text("Daily Screentime Limit")
+                Text("Daily Screen Time Limit")
                     .font(.title2)
                     .bold()
                 
@@ -40,7 +40,7 @@ struct GoalsSettingView : View {
                     Text("Set daily goals")
                 }
                 
-                Text("This preference is saved automatically.")
+                Text("These preferences are saved automatically.")
                     .font(.caption)
                     .foregroundColor(.gray)
             }
