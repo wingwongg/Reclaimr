@@ -9,78 +9,97 @@ import SwiftUI
 
 struct TasksPageView : View {
     @State private var showingAddTaskSheet = false
-    @State private var showingEditTaskSheet = false
-    @State private var showingDeleteTaskAlert = false
+    @State private var selectedTaskForEditing: TaskModel?
+    @State private var showingDeleteConfirmation = false
+    @State private var selectedTaskForDeletion: TaskModel?
+
     @EnvironmentObject var taskList: TaskListModel
     
     var body: some View {
-        NavigationStack {
-            
-            VStack() {
-                
+        ZStack {
+            NavigationStack {
                 List {
                     ForEach(taskList.tasks) { task in
-                        HStack(alignment: .center) {
-                            VStack(alignment: .leading) {
-                                Text(task.name).font(.headline)
-                                HStack() {
-                                    Text("Time: \(task.rewardMinutes) min")
-                                    Text("Points: 100")
-                                }
-                                .font(.caption2)
-                            }
-                            Spacer()
-                            Button() {
-                                showingEditTaskSheet = true
+                        Button {
+                            // Log the task
+                            
+                        } label: {
+                            TaskRowView(currentTask: task)
+                        }
+                        .foregroundColor(.black)
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                // Delay the deletion so the swipe resets first
+                                selectedTaskForDeletion = task
+                                showingDeleteConfirmation = true
                             } label: {
-                                Image(systemName: "square.and.pencil")
-                                    .padding(.bottom, 2)
-                                // pop up to add task
+                                Label("Delete", systemImage: "trash")
                             }
-                            .sheet(isPresented: $showingEditTaskSheet) {
-                                EditTaskPopupView(isPresented: $showingEditTaskSheet, currentTask: task) { name, time in
-                                    // Handle your task logic here
-                                    taskList.editTask(task, name, time)
-                                }
-                            }
-    
-                            Button() {
-                                
+                        }
+                        .swipeActions(edge: .leading) {
+                            Button {
+                                selectedTaskForEditing = task
                             } label: {
-                                Image(systemName: "gearshape")
-                                // pop up to confirm deletion of tasks
+                                Label("Edit", systemImage: "pencil")
                             }
-                            .alert("Add Task", isPresented: $showingDeleteTaskAlert) {
-                                Button("Confirm", role: .cancel) {
-                                    // action
-                                }
-                                Button("Cancel", role: .destructive) {}
-                            }
+                            .tint(.blue)
                         }
                     }
                 }
             }
-        }
-        .navigationTitle("Time Earners")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button() {
-                    // pop up to add task
-                    showingAddTaskSheet = true
-                } label: {
-                    Image(systemName: "plus")
-                }
-                .sheet(isPresented: $showingAddTaskSheet) {
-                    AddTaskPopupView(isPresented: $showingAddTaskSheet) { name, time in
-                        // Handle your task logic here
-                        taskList.addTask(TaskModel(name: name, rewardMinutes: time))
+            .navigationTitle("Time Earners")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button() {
+                        showingAddTaskSheet = true
+                    } label: {
+                        Image(systemName: "plus")
                     }
                 }
+            }
+            // Edit Task
+            .sheet(item: $selectedTaskForEditing) { task in
+                EditTaskPopupView(
+                    isPresented: Binding(
+                        get: { selectedTaskForEditing != nil },
+                        set: { if !$0 { selectedTaskForEditing = nil } }
+                    ),
+                    currentTask: task) { name, time in
+                        taskList.editTask(selectedTaskForEditing!, name, time)
+                    }
+            }
+            // Add Task
+            .sheet(isPresented: $showingAddTaskSheet) {
+                AddTaskPopupView(isPresented: $showingAddTaskSheet) { name, time in
+                    // add task
+                    taskList.addTask(TaskModel(name: name, rewardMinutes: time))
+                }
+            }
+            // Delete Task
+            if showingDeleteConfirmation {
+                BottomDeleteConfirmationView(
+                    onDelete: {
+                        if let task = selectedTaskForDeletion {
+                            taskList.deleteTask(task)
+                        }
+                        selectedTaskForDeletion = nil
+                        showingDeleteConfirmation = false
+                    },
+                    onCancel: {
+                        selectedTaskForDeletion = nil
+                        showingDeleteConfirmation = false
+                    }
+                )
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .zIndex(1)
             }
         }
     }
 }
 
-#Preview {
-    TasksPageView()
+struct TasksPageView_Previews: PreviewProvider {
+    static var previews: some View {
+        TasksPageView()
+            .environmentObject(TaskListModel())
+    }
 }

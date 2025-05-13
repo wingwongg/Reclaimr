@@ -69,14 +69,12 @@ struct EditTaskPopupView: View {
             .cornerRadius(16)
             .shadow(radius: 10)
             .frame(maxWidth: 320)
+            .onAppear {
+                taskName = currentTask.name
+                rewardTime = String(currentTask.rewardMinutes)
+            }
         }
         .animation(.easeInOut, value: isPresented)
-    }
-}
-
-struct EditTaskPopupView_Preview : PreviewProvider {
-    static var previews: some View {
-        
     }
 }
 

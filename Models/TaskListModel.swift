@@ -28,4 +28,8 @@ class TaskListModel : ObservableObject {
             tasks[index] = TaskModel(name: name, rewardMinutes: rewardMinutes)
         }
     }
+    
+    func deleteTask(_ task: TaskModel) {
+        tasks.remove(at: tasks.firstIndex(where: { $0.id == task.id })!)
+    }
 }
