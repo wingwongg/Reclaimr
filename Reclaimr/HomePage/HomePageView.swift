@@ -42,20 +42,9 @@ struct HomePageView : View {
                 
                 Text("Reclaimr").font(.largeTitle)
                 
-                Text("You have 1h30m of screen time remaining")
-                    .padding(.vertical, 50)
-                    .padding(.horizontal, 20)
-                
-                HStack() {
-                    // customize activity report
-                    DeviceActivityReport(context, filter: filter)
-                        .frame(width: 200.0, height: 200.0)
-                    
-                    // Circle productive hours
-                    CircularProgressRing(progress: 0.4, size: 150, color: .green)
-                        .padding(.trailing, 30.0)
-                        .frame(width: 200.0, height: 200.0)
-                }
+                DeviceActivityReport(context, filter: filter)
+                    .frame(width: 400.0, height: 350.0)
+
                 
                 NavigationLink {
                     TasksPageView()

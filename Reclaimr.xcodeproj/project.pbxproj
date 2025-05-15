@@ -69,13 +69,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B5973CEF2DD50082001BE59E /* Reclaimr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Reclaimr.entitlements; sourceTree = "<group>"; };
 		B5B4E0952DCE4144007AF7EF /* Reclaimr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reclaimr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B4E0A22DCE4146007AF7EF /* ReclaimrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReclaimrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B4E0AC2DCE4146007AF7EF /* ReclaimrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReclaimrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B4E1302DCE441E007AF7EF /* ReclaimrMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ReclaimrMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B4E1322DCE441E007AF7EF /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
 		B5B4E1452DCE4460007AF7EF /* ReclaimrReportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ReclaimrReportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5B4E15F2DCE4570007AF7EF /* Reclaimr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Reclaimr.entitlements; path = Reclaimr/Reclaimr.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -159,9 +159,9 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		B5B4E1132DCE42B0007AF7EF /* Application */ = {
+		B5B4E1132DCE42B0007AF7EF /* Reclaimr */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Application;
+			path = Reclaimr;
 			sourceTree = "<group>";
 		};
 		B5B4E1342DCE441E007AF7EF /* ReclaimrMonitorExtension */ = {
@@ -225,8 +225,8 @@
 		B5B4E08C2DCE4144007AF7EF = {
 			isa = PBXGroup;
 			children = (
-				B5B4E15F2DCE4570007AF7EF /* Reclaimr.entitlements */,
-				B5B4E1132DCE42B0007AF7EF /* Application */,
+				B5973CEF2DD50082001BE59E /* Reclaimr.entitlements */,
+				B5B4E1132DCE42B0007AF7EF /* Reclaimr */,
 				B5B4E1112DCE4287007AF7EF /* Assets */,
 				B5B4E0FD2DCE4177007AF7EF /* Common */,
 				B5B4E0FB2DCE416B007AF7EF /* Models */,
@@ -282,7 +282,7 @@
 				B5B4E0FB2DCE416B007AF7EF /* Models */,
 				B5B4E0FD2DCE4177007AF7EF /* Common */,
 				B5B4E1112DCE4287007AF7EF /* Assets */,
-				B5B4E1132DCE42B0007AF7EF /* Application */,
+				B5B4E1132DCE42B0007AF7EF /* Reclaimr */,
 			);
 			name = Reclaimr;
 			packageProductDependencies = (
@@ -659,17 +659,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Reclaimr/Reclaimr.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Reclaimr.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U74S5597C9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Reclaimr;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -693,17 +696,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Reclaimr/Reclaimr.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Reclaimr.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U74S5597C9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Reclaimr;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,11 +734,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RV536M3UG2;
+				DEVELOPMENT_TEAM = U74S5597C9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wingwongg.ReclaimrTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nebitrams.ReclaimrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -747,11 +753,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RV536M3UG2;
+				DEVELOPMENT_TEAM = U74S5597C9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wingwongg.ReclaimrTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nebitrams.ReclaimrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -765,10 +771,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RV536M3UG2;
+				DEVELOPMENT_TEAM = U74S5597C9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wingwongg.ReclaimrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nebitrams.ReclaimrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -782,10 +788,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RV536M3UG2;
+				DEVELOPMENT_TEAM = U74S5597C9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wingwongg.ReclaimrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nebitrams.ReclaimrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -801,7 +807,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U74S5597C9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReclaimrMonitorExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ReclaimrMonitorExtension;
@@ -829,7 +835,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U74S5597C9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReclaimrMonitorExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ReclaimrMonitorExtension;
@@ -856,7 +862,7 @@
 				CODE_SIGN_ENTITLEMENTS = ReclaimrReportExtension/ReclaimrReportExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U74S5597C9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReclaimrReportExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ReclaimrReportExtension;
@@ -882,7 +888,7 @@
 				CODE_SIGN_ENTITLEMENTS = ReclaimrReportExtension/ReclaimrReportExtensionRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RV536M3UG2;
+				DEVELOPMENT_TEAM = U74S5597C9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReclaimrReportExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ReclaimrReportExtension;
