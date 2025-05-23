@@ -12,31 +12,41 @@ import ManagedSettings
 @main
 struct ReclaimrApp : App {
     
-    @StateObject var screenTimeModel = DataModel.shared
+    @StateObject var screenTimeModel = SharedDataModel.shared
     @StateObject var store = ManagedSettingsStore()
-    @StateObject var taskModel = TaskListModel.shared
+    @StateObject var taskListModel = TaskListModel.shared
     
+    @State private var hasCompletedSetup = UserDefaults(suiteName: "group.com.nebitrams.Reclaimr")?.bool(forKey: "hasCompletedSetup")
     @State private var viewModel = ViewModel()
     
     let center = AuthorizationCenter.shared
     
     var body: some Scene {
         WindowGroup {
-            HomePageView()
-        .onAppear {
-            viewModel.getSelection() // load the selection whenever the homescreen appears?
-            Task {
-                viewModel.startMonitoring()
-                    do {
-                        try await center.requestAuthorization(for: .individual)
-                    } catch {
-                        // handle error
+            if hasCompletedSetup! {
+                HomePageView()
+                    .onAppear {
+                        viewModel.getSelection() // load the selection whenever the homescreen appears
+                        Task {
+                            viewModel.startMonitoring()
+                            do {
+                                try await center.requestAuthorization(for: .individual)
+                            } catch {
+                                // handle error
+                            }
+                        }
                     }
-                }
+                    .environmentObject(screenTimeModel)
+                    .environmentObject(store)
+                    .environmentObject(taskListModel)
+                    .defaultAppStorage(UserDefaults(suiteName: "group.com.nebitrams.Reclaimr")!)
             }
-        .environmentObject(screenTimeModel)
-        .environmentObject(store)
-        .environmentObject(taskModel)
+            else {
+                OnboardingView(onFinish: {
+                    viewModel.completeSetup()
+                    hasCompletedSetup = true
+                })
+            }
         }
     }
 }

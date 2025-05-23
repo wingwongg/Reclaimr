@@ -9,22 +9,27 @@ import SwiftUI
 
 struct TotalActivityView: View {
     let totalActivity: String
-    
+    let screenTimeLimit = UserDefaults(suiteName: "group.com.nebitrams.Reclaimr")!.integer(forKey: "dailyScreenTimeLimit")
+    let productivityGoal = UserDefaults(suiteName: "group.com.nebitrams.Reclaimr")!.integer(forKey: "dailyProductiveGoal")
+
     var body: some View {
+        let timeLeft = Double(screenTimeLimit) * 60.0 - convertToMinutes(from: totalActivity)
+        
         VStack() {
-            Text("You have \(formatMinutesToHourMinute(120.0 - convertToMinutes(from: totalActivity))) of screen time remaining")
+            Text("You have \(formatMinutesToHourMinute(timeLeft)) of screentime left")
                 .padding(.vertical, 40)
                 .padding(.horizontal, 20)
             
             HStack() {
-                // customize activity report
-                CircularProgressRing(progress: Double(convertToMinutes(from: totalActivity)) / 120.0, size: 150, color: .blue)
-                    .padding(.leading, 30.0)
+                // screen time progress
+                CircularProgressRing(progress: Double(convertToMinutes(from: totalActivity)) / (Double(screenTimeLimit) * 60.0), thickness: 13, size: 130, color: .blue)
+                    .padding(.leading, 30)
+                    .padding(.trailing, 10)
                 
-                // Circle productive hours
-                CircularProgressRing(progress: 0.4, size: 150, color: .green)
-                    .padding(.trailing, 30.0)
-                    .frame(width: 200.0, height: 200.0)
+                // productive progress
+                CircularProgressRing(progress: Double(5) / (Double(productivityGoal) * 60.0), thickness: 13, size: 130)
+                    .padding(.trailing, 30)
+                    .padding(.leading, 10)
             }
         }
     }

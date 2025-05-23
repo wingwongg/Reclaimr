@@ -10,7 +10,6 @@ import SwiftUI
 struct TasksPageView : View {
     @State private var showingAddTaskSheet = false
     @State private var selectedTaskForEditing: TaskModel?
-    @State private var showingDeleteConfirmation = false
     @State private var selectedTaskForDeletion: TaskModel?
 
     @EnvironmentObject var taskList: TaskListModel
@@ -31,7 +30,6 @@ struct TasksPageView : View {
                             Button(role: .destructive) {
                                 // Delay the deletion so the swipe resets first
                                 selectedTaskForDeletion = task
-                                showingDeleteConfirmation = true
                             } label: {
                                 Label("Delete", systemImage: "trash")
                             }
@@ -76,22 +74,13 @@ struct TasksPageView : View {
                 }
             }
             // Delete Task
-            if showingDeleteConfirmation {
-                BottomDeleteConfirmationView(
-                    onDelete: {
-                        if let task = selectedTaskForDeletion {
-                            taskList.deleteTask(task)
-                        }
-                        selectedTaskForDeletion = nil
-                        showingDeleteConfirmation = false
-                    },
-                    onCancel: {
-                        selectedTaskForDeletion = nil
-                        showingDeleteConfirmation = false
-                    }
-                )
-                .transition(.move(edge: .bottom).combined(with: .opacity))
-                .zIndex(1)
+            .confirmationDialog("Are you sure?",
+                isPresented: Binding(
+                    get: { selectedTaskForDeletion != nil },
+                    set: { if !$0 { selectedTaskForDeletion = nil } }
+                )) { Button("Delete task?", role:.destructive) {
+                    taskList.deleteTask(selectedTaskForDeletion!)
+                }
             }
         }
     }

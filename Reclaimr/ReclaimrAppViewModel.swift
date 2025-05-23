@@ -20,19 +20,17 @@ extension ReclaimrApp {
         }
         
         func getSelection() {
-            print("called on startup?")
-//            let selection = DataModel.shared.loadSelection()
+            SharedDataModel.shared.loadSelection()
         }
         
         func startMonitoring() {
-            print("called on startup1")
-            let timeLimitMinutes = DataModel.shared.dailyScreenTimeLimitHours * 60
-            let selection = DataModel.shared.selectionToDiscourage
+            let timeLimitMinutes = SharedDataModel.shared.dailyScreenTimeLimit * 60
+            let selection = SharedDataModel.shared.selectionToDiscourage
             let limitReachedEvent = DeviceActivityEvent(
                 applications: selection.applicationTokens,
                 categories: selection.categoryTokens,
                 webDomains: selection.webDomainTokens,
-                threshold: DateComponents(minute: 1)) // timeLimitMinutes
+                threshold: DateComponents(minute: timeLimitMinutes)) // timeLimitMinutes
             
             let center = DeviceActivityCenter()
             let activity = DeviceActivityName("MyApp.ScreenTime")
@@ -45,6 +43,11 @@ extension ReclaimrApp {
                     during: schedule,
                     events: [eventName: limitReachedEvent])
             } catch { }
+        }
+        
+        func completeSetup() {
+            let defaults = UserDefaults(suiteName: "group.com.nebitrams.Reclaimr")
+            defaults?.set(true, forKey: "hasCompletedSetup")
         }
     }
 }

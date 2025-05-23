@@ -29,7 +29,7 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
         
         print("LIMIT REACHED!!!")
         // Handle the event reaching its threshold.
-        DataModel.shared.setShieldRestrictions()
+//        SharedDataModel.shared.setShieldRestrictions()
     }
     
     override func intervalWillStartWarning(for activity: DeviceActivityName) {

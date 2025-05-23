@@ -20,10 +20,11 @@ struct HomePageView : View {
            )!
        ),
        devices: .init([.iPhone, .iPad]),
-       applications: DataModel.shared.selectionToDiscourage.applicationTokens,
-       categories: DataModel.shared.selectionToDiscourage.categoryTokens,
-       webDomains: DataModel.shared.selectionToDiscourage.webDomainTokens
+       applications: SharedDataModel.shared.selectionToDiscourage.applicationTokens,
+       categories: SharedDataModel.shared.selectionToDiscourage.categoryTokens,
+       webDomains: SharedDataModel.shared.selectionToDiscourage.webDomainTokens
    )
+    @EnvironmentObject var taskList: TaskListModel
     
     var body: some View {
         NavigationStack() {
@@ -42,12 +43,15 @@ struct HomePageView : View {
                 
                 Text("Reclaimr").font(.largeTitle)
                 
+               
                 DeviceActivityReport(context, filter: filter)
                     .frame(width: 400.0, height: 350.0)
 
-                
                 NavigationLink {
                     TasksPageView()
+                        .onAppear {
+                            taskList.loadTasks()
+                        }
                 } label: {
                     Text("Do Tasks")
                         .foregroundColor(.white)
@@ -55,7 +59,7 @@ struct HomePageView : View {
                         .padding(.vertical, 10)
                         .background(Rectangle().foregroundColor(.green))
                         .cornerRadius(15)
-                        .padding(.vertical, 30)
+                        .padding(.top, 10)
                 }
                 
                 // productivity log preview: list of tasks done today
@@ -69,6 +73,6 @@ struct HomePageView : View {
 struct HomePageView_Previews: PreviewProvider {
     static var previews: some View {
         HomePageView()
-            .environmentObject(DataModel())
+            .environmentObject(SharedDataModel.shared)
     }
 }

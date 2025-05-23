@@ -7,11 +7,11 @@
 
 import Foundation
 
-class TaskModel: ObservableObject, Identifiable {
-    let id = UUID()
-    @Published var name: String
-    @Published var rewardMinutes: Int
-    @Published var startTime: Date? = nil
+class TaskModel: Identifiable, Codable {
+    var id = UUID()
+    var name: String
+    var rewardMinutes: Int
+    var startTime: Date? = nil
 
     init(name: String, rewardMinutes: Int) {
         self.name = name
@@ -20,11 +20,6 @@ class TaskModel: ObservableObject, Identifiable {
 
     func startTask() {
         startTime = Date()
-    }
-    
-    func editTask(name: String, rewardMinutes: Int) {
-        self.name = name
-        self.rewardMinutes = rewardMinutes
     }
 
     var isRunning: Bool {

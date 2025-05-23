@@ -12,7 +12,7 @@ import SwiftUI
 struct SettingsPageView : View {
     @State private var isPresented = false
     
-    @EnvironmentObject var model: DataModel
+    @EnvironmentObject var model: SharedDataModel
     
     var body: some View {
         NavigationStack {
@@ -29,6 +29,9 @@ struct SettingsPageView : View {
                     Button("Restricted Apps") { isPresented = true }
                        .familyActivityPicker(isPresented: $isPresented,
                                              selection: $model.selectionToDiscourage)
+                       .onDisappear {
+                           SharedDataModel.shared.saveSelection()
+                       }
                        .foregroundColor(.black)
                     
                 }
@@ -55,7 +58,7 @@ struct SettingsPageView : View {
 struct SettingsPageView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsPageView()
-            .environmentObject(DataModel())
+            .environmentObject(SharedDataModel.shared)
             .environmentObject(ManagedSettingsStore())
     }
 }

@@ -79,6 +79,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B54FE9672DD5DDDB00B655F1 /* Exceptions for "Models" folder in "ReclaimrMonitorExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SharedDataModel.swift,
+				SharedSettings.swift,
+			);
+			target = B5B4E12F2DCE441E007AF7EF /* ReclaimrMonitorExtension */;
+		};
+		B54FE9682DD5DDDB00B655F1 /* Exceptions for "Models" folder in "ReclaimrReportExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SharedDataModel.swift,
+				SharedSettings.swift,
+			);
+			target = B5B4E1442DCE4460007AF7EF /* ReclaimrReportExtension */;
+		};
 		B5B4E13C2DCE441E007AF7EF /* Exceptions for "ReclaimrMonitorExtension" folder in "ReclaimrMonitorExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -98,6 +114,7 @@
 			membershipExceptions = (
 				BottomDeleteConfirmationView.swift,
 				CircularProgressRingView.swift,
+				GroupAppStorage.swift,
 			);
 			target = B5B4E12F2DCE441E007AF7EF /* ReclaimrMonitorExtension */;
 		};
@@ -106,20 +123,7 @@
 			membershipExceptions = (
 				BottomDeleteConfirmationView.swift,
 				CircularProgressRingView.swift,
-			);
-			target = B5B4E1442DCE4460007AF7EF /* ReclaimrReportExtension */;
-		};
-		B5B4E15D2DCE44BF007AF7EF /* Exceptions for "Models" folder in "ReclaimrMonitorExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				DataModel.swift,
-			);
-			target = B5B4E12F2DCE441E007AF7EF /* ReclaimrMonitorExtension */;
-		};
-		B5B4E15E2DCE44BF007AF7EF /* Exceptions for "Models" folder in "ReclaimrReportExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				DataModel.swift,
+				GroupAppStorage.swift,
 			);
 			target = B5B4E1442DCE4460007AF7EF /* ReclaimrReportExtension */;
 		};
@@ -139,8 +143,8 @@
 		B5B4E0FB2DCE416B007AF7EF /* Models */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				B5B4E15D2DCE44BF007AF7EF /* Exceptions for "Models" folder in "ReclaimrMonitorExtension" target */,
-				B5B4E15E2DCE44BF007AF7EF /* Exceptions for "Models" folder in "ReclaimrReportExtension" target */,
+				B54FE9672DD5DDDB00B655F1 /* Exceptions for "Models" folder in "ReclaimrMonitorExtension" target */,
+				B54FE9682DD5DDDB00B655F1 /* Exceptions for "Models" folder in "ReclaimrReportExtension" target */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -846,7 +850,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wingwongg.Reclaimr.ReclaimrMonitorExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nebitrams.Reclaimr.ReclaimrMonitorExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

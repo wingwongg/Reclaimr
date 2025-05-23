@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct GoalsSettingView : View {
-    @AppStorage("dailyScreenTimeHours") private var dailyLimit: Int = 0
-    @AppStorage("dailyProductiveHours") private var dailyGoal: Int = 0
+    @GroupAppStorage("dailyScreenTimeLimit", suiteName: "group.com.nebitrams.Reclaimr") private var dailyLimit: Int = 0
+    @GroupAppStorage("dailyProductiveGoal", suiteName: "group.com.nebitrams.Reclaimr") private var dailyGoal: Int = 0
 
     var body: some View {
         VStack {
